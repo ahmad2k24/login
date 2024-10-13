@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:login/home.dart';
-import 'package:login/register.dart';
+import 'package:login/screens/home.dart';
+
+import 'auth.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

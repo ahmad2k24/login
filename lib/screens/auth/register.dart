@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:login/login.dart';
+
+import 'auth.dart';
 
 class Register extends StatefulWidget {
   const Register({super.key});
@@ -11,6 +12,7 @@ class Register extends StatefulWidget {
 }
 
 class RegisterState extends State<Register> {
+  final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -69,9 +71,11 @@ class RegisterState extends State<Register> {
                   onPressed: () {
                     Navigator.of(context).pop();
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const LoginPage()));
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LoginPage(),
+                      ),
+                    );
                     setState(() {
                       emailController.clear();
                       passwordController.clear();
